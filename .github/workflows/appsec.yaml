@@ -1,28 +1,31 @@
 name: Deploy CDK Project
 
-# on:
-#  push:
-#   branches:
-#      - develop
-# pull_request:
-#    branches:
-#      - main
-#    types:
-#      - closed
+on:
+ push:
+  branches:
+     - develop
+pull_request:
+   branches:
+     - main
+   types:
+     - closed
 
  jobs:
   aws_cdk:
-  if: github.event.pull_request.merged == true || github.event_name == 'push'
-    runs-on: ubuntu-latest
+  #if: github.event.pull_request.merged == true || github.event_name == 'push'
+   runs-on: ubuntu-latest
    steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+
       - uses: actions/setup-node@v2
         with:
           node-version: '18'
+
       - run: npm install
+
       - name: cdk diff
-      - uses: youyo/aws-cdk-github-actions@v2
+        uses: youyo/aws-cdk-github-actions@v2
         with:
           cdk_subcommand: 'diff'
           actions_comment: true
@@ -40,4 +43,4 @@ name: Deploy CDK Project
           actions_comment: false
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-.         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
