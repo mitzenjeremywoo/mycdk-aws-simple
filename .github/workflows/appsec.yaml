@@ -4,11 +4,12 @@ on:
  push:
   branches:
      - develop
-pull_request:
-   branches:
-     - main
-   types:
-     - closed
+
+# pull_request:
+#    branches:
+#      - main
+#    types:
+#      - closed
 
  jobs:
   aws_cdk:
