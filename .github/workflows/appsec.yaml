@@ -1,7 +1,6 @@
 name: carry
-on:
-  release:
-    types: [published]
+
+on: [push]
 
 jobs:
   it:
