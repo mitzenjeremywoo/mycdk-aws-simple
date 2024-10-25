@@ -1,17 +1,8 @@
 name: Deploy CDK Project
 
-on:
- push:
-  branches:
-     - develop
+on: [push]
 
-# pull_request:
-#    branches:
-#      - main
-#    types:
-#      - closed
-
- jobs:
+jobs:
   aws_cdk:
   #if: github.event.pull_request.merged == true || github.event_name == 'push'
    runs-on: ubuntu-latest
