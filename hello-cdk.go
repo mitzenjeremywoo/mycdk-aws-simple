@@ -15,7 +15,7 @@ func main() {
 
 	app := awscdk.NewApp(nil)
 
-	NewHelloCdkStack(app, "HelloCdkStack", &HelloCdkStackProps{
+	NewHelloCdkStack(app, "HelloCdkStack-", &HelloCdkStackProps{
 		awscdk.StackProps{
 			Env: env(),
 		},
