@@ -25,7 +25,7 @@ func main() {
 
 func env() *awscdk.Environment {
 	return &awscdk.Environment{
-		Account: jsii.String(os.GetEnv("ACCOUNT")),
+		Account: jsii.String(os("ACCOUNT")),
 		Region:  jsii.String("ap-southeast-2"),
 	}
 }
