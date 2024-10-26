@@ -7,7 +7,7 @@ jobs:
     strategy:
       matrix:
         stack:
-          - blueprint-golang
+          - HelloCdkStack
 
     runs-on: ubuntu-latest
     steps:
