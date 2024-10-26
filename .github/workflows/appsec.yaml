@@ -19,7 +19,7 @@ jobs:
            ACCOUNT: ${{ vars.ACCOUNT }}
         with:
           go-version: 1.18
-          stack: ${{ matrix.stack }}
+          stack: HelloCdkStack
           version: ${{ github.event.release.name }}
           issue-to-create: ./.github/issue-spawn-release.md
           aws-access-key: ${{ secrets.AWS_ACCESS_KEY }}
