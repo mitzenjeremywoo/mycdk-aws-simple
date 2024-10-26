@@ -15,6 +15,8 @@ jobs:
       - uses: actions/checkout@v2
 
       - uses: fogfish/spawner-cdk@main
+        env: 
+           ACCOUNT: ${{ vars.ACCOUNT }}
         with:
           go-version: 1.18
           stack: ${{ matrix.stack }}
@@ -23,3 +25,4 @@ jobs:
           aws-access-key: ${{ secrets.AWS_ACCESS_KEY }}
           aws-secret-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-1
+       
