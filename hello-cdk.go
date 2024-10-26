@@ -1,12 +1,13 @@
 package main
 
 import (
+	"os"
+
 	"github.com/aws/aws-cdk-go/awscdk/v2"
 	"github.com/aws/aws-cdk-go/awscdk/v2/awslambda"
 	"github.com/aws/aws-cdk-go/awscdk/v2/awss3"
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/aws/jsii-runtime-go"
-	"os"
 )
 
 func main() {
@@ -25,7 +26,7 @@ func main() {
 
 func env() *awscdk.Environment {
 	return &awscdk.Environment{
-		Account: jsii.String(os("ACCOUNT")),
+		Account: jsii.String(os.Getenv("ACCOUNT")),
 		Region:  jsii.String("ap-southeast-2"),
 	}
 }
