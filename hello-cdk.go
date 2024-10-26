@@ -6,6 +6,7 @@ import (
 	"github.com/aws/aws-cdk-go/awscdk/v2/awss3"
 	"github.com/aws/constructs-go/constructs/v10"
 	"github.com/aws/jsii-runtime-go"
+	"os"
 )
 
 func main() {
@@ -24,7 +25,7 @@ func main() {
 
 func env() *awscdk.Environment {
 	return &awscdk.Environment{
-		Account: jsii.String(""),
+		Account: jsii.String(os.GetEnv("ACCOUNT")),
 		Region:  jsii.String("ap-southeast-2"),
 	}
 }
